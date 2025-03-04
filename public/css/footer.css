@@ -1,9 +1,8 @@
 .sec {
-    background-color: #202c34;
+    background-color: #131517;
 }
 
 .footer .item.social > a {
-    font-size: 25px;
     width: 36px;
     height: 36px;
     line-height: 36px;
@@ -14,7 +13,7 @@
     margin: 0 8px;
     color: #fff;
     opacity: 0.75;
-    background-color: black;
+    text-align: center;
 }
 
 .footer .item.social > a:hover {

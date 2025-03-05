@@ -1,4 +1,37 @@
 <x-layout>
+  <style>
+    section {
+      margin: 0%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container{
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image{
+      position: relative;
+      transform: translateZ(-50%);
+      top: 0%;
+      left: -80%;
+      right: -100%;
+      transition: transform 0.7s ease-out;
+      width: 100%;
+      animation-duration: 2s;
+    }
+
+    .imge {
+      position: relative;
+      top: 0%;
+      right: -70%; /* Mulai di luar layar dari kanan */
+      transform: translateZ(-50%);
+      transition: transform 0.7s ease-out; /* Pastikan transisi mulus */
+      width: 100%;
+      animation: 2s;
+    }
+    
+  </style>
     <x-slot:title>
       <div class="text-white shadow-2xl hover:text-nowrap hover:text-green-500">
         {{ $title }} 
@@ -13,8 +46,8 @@
     <section class="bg-white px-4 py-8 antialiased dark:bg-gray-900 md:py-16 rounded-2xl">
         <div class="mx-auto grid max-w-screen-xl rounded-lg bg-gray-50 p-4 dark:bg-gray-800 md:p-8 lg:grid-cols-12 lg:gap-8 lg:p-16 xl:gap-16">
           <div class="lg:col-span-5 col-md-4 lg:mt-0">
-            <a href="#">
-              <img class="rounded-xl h-56 w-56 dark:hidden sm:h-96 sm:w-96 md:h-full md:w-full" src="{{ asset('img/webdev.jpeg') }}" alt="peripherals" />
+            <a href="#" class="">
+              <img class="image rounded-xl h-56 w-56 dark:hidden sm:h-96 sm:w-96 md:h-full md:w-full" src="{{ asset('img/webdev.jpeg') }}" id="slidingImage" alt="peripherals" />
             </a>
           </div>
           <div class="mx-auto place-self-center lg:col-span-7">
@@ -48,11 +81,44 @@
           </div>
           <div class="lg:col-span-5 col-md-4 lg:mt-0">
             <a href="">
-              <img class="rounded-xl h-56 w-56 dark:hidden sm:h-96 sm:w-96 md:h-full md:w-full animate-bounce transition-transform duration-500" src="{{ asset('img/prog.png') }}" alt="">
+              <img class="imge rounded-xl h-56 w-56 dark:hidden sm:h-96 sm:w-96 md:h-full md:w-full" id="outImage" src="{{ asset('img/prog.png') }}" alt="">
             </a>
           </div>
         </div>
 
       </section>
-    
+
+      
+<script>
+        // Gambar pertama (slidingImage)
+const image1 = document.getElementById('slidingImage');
+
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const imagePosition = scrollPosition * 0.9;
+    image1.style.transform = `translateX(${imagePosition}px)`; // Gambar pertama bergerak dari kiri ke kanan
+});
+
+// Gambar kedua (outImage)
+const image2 = document.getElementById('outImage');
+
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+
+    // Menghitung seberapa jauh gambar kedua bergeser
+    const imagePosition = scrollPosition * 0.2; // Adjust kecepatan pergeseran
+
+    // Tentukan batas pergerakan gambar
+    const maxPosition = window.innerWidth - image2.offsetWidth;  // Batas kiri (lebar layar - lebar gambar)
+    const minPosition = 100; // Batas kanan (gambar tidak boleh keluar dari kanan)
+
+    // Terapkan pembatasan pergeseran gambar
+    const limitedPosition = Math.min(Math.max(imagePosition, minPosition), maxPosition);
+
+    // Terapkan transformasi ke gambar kedua
+    image2.style.transform = `translateX(-${limitedPosition}px)`; // Gambar bergerak dari kanan ke kiri
+});
+
+</script>
+
  </x-layout>

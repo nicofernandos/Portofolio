@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Expr\FuncCall;
 
 Route::get('/',function(){
-    return view('home', ['title' => 'Home Page']);
+    return view('home', ['title' => 'Home Page Portofolio']);
 });
 
 Route::get('/about',function(){
@@ -21,4 +22,13 @@ Route::get('/vimi', function(){
 
 Route::get('/education', function(){
     return view('education', ['title' => 'Education']);
+});
+
+Route::get('/project', function(){
+    // $posts = Project::with('category')->latest()->get();
+    return view('project',['title' => 'Project','proj' => Project::filter(request(['search','category']))->latest()->paginate(9)->WithQueryString()]);
+});
+
+Route::get('certificate', function(){
+    return view('certificate',['title' => 'Certificate']);
 });

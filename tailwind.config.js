@@ -48,6 +48,6 @@ export default {
             },
         },
     },
-    safelist: ["bg-red-100", "bg-green-100", "bg-blue-100", "bg-yellow-100"],
+    safelist: ["bg-red-800", "bg-green-800", "bg-blue-800", "bg-yellow-800"],
     plugins: [require("flowbite/plugin")],
 };

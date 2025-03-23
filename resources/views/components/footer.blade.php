@@ -1,4 +1,4 @@
-<section class="sec w-full mx-auto pb-5 max-w-7xl sec outline outline-offset-1 outline-sky-900 mb-52">
+<section class="sec font-sans font-semibold w-full mx-auto pb-5 max-w-7xl sec outline outline-offset-1 outline-sky-900 mb-52">
     <div class="footer mt-2 shadow-md text-white rounded-md">
         <footer>
             <div class="container flex justify-center space-x-6">
@@ -12,10 +12,10 @@
                     </div>
                 </div>
                 <div class="col-1 col-sm-6 font-xs font-lg col-md-2 text-center font-thin">
-                    <h3 class="font-serif font-xs text-3xl font-bold text-white-600 mb-2 pt-2">Contact Me</h3>
+                    <h3 class="font--apple-system font-xs font-serif font-xs text-2xl tracking-tight font-bold text-white-600 mb-2 pt-2">Contact Me</h3>
                     <ul class="grid grid-cols-2">
-                        <li><a class="bi bi-telephone"> +62-814-3804-9332</a></li>
-                        <li><a class="bi bi-envelope"> nicofernando060@gmail.com</a></li>
+                        <li><a class="bi bi-telephone font-semibold"> +62-814-3804-9332</a></li>
+                        <li><a class="bi bi-envelope font-semibold text-nowrap tracking-tight"> nicofernando060@gmail.com</a></li>
                     </ul>
                 </div>
             </div>

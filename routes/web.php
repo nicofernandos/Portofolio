@@ -29,6 +29,10 @@ Route::get('/project', function(){
     return view('project',['title' => 'Project','proj' => Project::filter(request(['search','category']))->latest()->paginate(9)->WithQueryString()]);
 });
 
+Route::get('/projects', function(){
+    return view('projects',['title' => 'Singel Projects']);
+});
+
 Route::get('certificate', function(){
     return view('certificate',['title' => 'Certificate']);
 });

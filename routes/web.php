@@ -24,6 +24,10 @@ Route::get('/education', function(){
     return view('education', ['title' => 'Education']);
 });
 
+Route::get('/experience', function(){
+    return view('experience');
+});
+
 Route::get('/project', function(){
     // $posts = Project::with('category')->latest()->get();
     return view('project',['title' => 'Project','proj' => Project::filter(request(['search','category']))->latest()->paginate(9)->WithQueryString()]);

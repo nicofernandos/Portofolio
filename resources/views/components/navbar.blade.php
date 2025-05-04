@@ -11,6 +11,7 @@
               <x-nav-link href="/" :active="request()->is('/')" >Home</x-nav-link>
               <x-nav-link href="/about" :active="request()->is('about')" >About</x-nav-link>
               <x-nav-link href="/education" :active="request()->is('education')" >Education</x-nav-link>
+              <x-nav-link href="/experience" :active="request()->is('experience')" >Experience</x-nav-link>
               <x-nav-link href="/project" :active="request()->is('project')" >Project</x-nav-link>
               <x-nav-link href="/certificate" :active="request()->is('certificate')" >Certificate & CV</x-nav-link>
               <x-nav-link href="/contact" :active="request()->is('contact')" >Contact</x-nav-link>

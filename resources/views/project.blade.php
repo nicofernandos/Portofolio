@@ -17,12 +17,14 @@
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  dark:text-white">{{ Str::limit($key->title, 20) }}</h2>
             </a>
             <div class="hover:shadow-2xl">
-                <img class="rounded-xl mb-2 focus:outline-none bg-gray-900 shadow-2xl justify-items-center" src="https://picsum.photos/900/900" alt="">
+                <img class="rounded-xl mb-2 focus:outline-none bg-gray-900 shadow-2xl justify-items-center" src="{{ asset('img/smpnlogo.jpg') }}" alt="">
             </div>
-            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
-               {{ Str::limit ( $key->body, 150) }}
-            </p>
-            <div class="flex flex-cols justify-between items-center">
+            <div class="hover:bg-lime-900">
+                <p class="mb-5 font-light text-gray-500 hover:text-gray-900 hover:shadow-xl ">
+                   {{ Str::limit ( $key->body, 150) }}
+                </p>
+            </div>
+            <div class="flex flex-cols justify-between items-center align-bottom">
                 <div class="flex items-center space-x-3">
                     <span class="font-medium text-sm dark:text-white">
                         {{-- {{ $post->author->name }} --}} Nama

@@ -25,7 +25,7 @@ Route::get('/education', function(){
 });
 
 Route::get('/experience', function(){
-    return view('experience');
+    return view('experience', ['title' => 'Experience']);
 });
 
 Route::get('/project', function(){

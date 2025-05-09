@@ -10,7 +10,7 @@ module.exports = {
         "./node_modules/flowbite/**/*.js",
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
     ],
-    theme: {
+    theme: {    
         extend: {
             fontFamily: {
                 sans: ["Inter var", ...defaultTheme.fontFamily.sans],
